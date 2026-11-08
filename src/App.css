@@ -1,0 +1,304 @@
+/* The paper texture and decorative slots can later use original local artwork. */
+body { padding: 0; background: var(--color-stamp-green); }
+.page-shell {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 0 clamp(1.25rem, 5vw, 4.5rem);
+  border: 6px solid var(--color-stamp-green);
+  border-radius: 0;
+  background-color: var(--color-paper);
+  background-image:
+    /* Soft but visible patches of uneven paper ageing. */
+    radial-gradient(ellipse 20% 15% at 24% 37%, color-mix(in srgb, var(--color-vintage-rust) 15%, transparent), transparent 100%),
+    radial-gradient(ellipse 14% 22% at 72% 58%, color-mix(in srgb, var(--color-dark-ink) 7%, transparent), color-mix(in srgb, var(--color-vintage-rust) 11%, transparent) 45%, transparent 100%),
+    radial-gradient(ellipse 23% 10% at 48% 85%, color-mix(in srgb, var(--color-vintage-rust) 13%, transparent), transparent 100%),
+    radial-gradient(ellipse 12% 16% at 48% 18%, color-mix(in srgb, var(--color-vintage-rust) 12%, transparent), transparent 100%),
+    radial-gradient(ellipse 17% 12% at 87% 30%, color-mix(in srgb, var(--color-vintage-rust) 14%, transparent), transparent 100%),
+    radial-gradient(ellipse 13% 18% at 12% 73%, color-mix(in srgb, var(--color-vintage-rust) 13%, transparent), transparent 100%),
+    /* Sparse ink splutters, kept near the edges and behind all content. */
+    radial-gradient(ellipse 3px 2px at 3% 24%, color-mix(in srgb, var(--color-dark-ink) 16%, transparent) 65%, transparent 100%),
+    radial-gradient(circle 1px at 3.6% 23.4%, color-mix(in srgb, var(--color-dark-ink) 12%, transparent) 65%, transparent 100%),
+    radial-gradient(circle 1.5px at 2.7% 25%, color-mix(in srgb, var(--color-dark-ink) 10%, transparent) 65%, transparent 100%),
+    radial-gradient(ellipse 2px 3px at 96% 72%, color-mix(in srgb, var(--color-vintage-rust) 18%, transparent) 65%, transparent 100%),
+    radial-gradient(circle 1px at 95.4% 72.8%, color-mix(in srgb, var(--color-vintage-rust) 14%, transparent) 65%, transparent 100%),
+    radial-gradient(circle 2px at 17% 94%, color-mix(in srgb, var(--color-dark-ink) 10%, transparent) 65%, transparent 100%),
+    /* Paired edge shadows and paper highlights suggest small folded areas. */
+    radial-gradient(ellipse 46px 8px at 24% 0%, color-mix(in srgb, var(--color-dark-ink) 34%, transparent), transparent),
+    radial-gradient(ellipse 40px 3px at 24% 8px, color-mix(in srgb, var(--color-paper) 85%, transparent), transparent),
+    radial-gradient(ellipse 34px 8px at 78% 0%, color-mix(in srgb, var(--color-vintage-rust) 48%, transparent), transparent),
+    radial-gradient(ellipse 29px 3px at 78% 8px, color-mix(in srgb, var(--color-paper) 85%, transparent), transparent),
+    radial-gradient(ellipse 8px 48px at 0% 44%, color-mix(in srgb, var(--color-dark-ink) 34%, transparent), transparent),
+    radial-gradient(ellipse 3px 40px at 8px 44%, color-mix(in srgb, var(--color-paper) 85%, transparent), transparent),
+    radial-gradient(ellipse 8px 38px at 100% 62%, color-mix(in srgb, var(--color-vintage-rust) 48%, transparent), transparent),
+    radial-gradient(ellipse 3px 32px at calc(100% - 8px) 62%, color-mix(in srgb, var(--color-paper) 85%, transparent), transparent),
+    radial-gradient(ellipse 52px 8px at 57% 100%, color-mix(in srgb, var(--color-dark-ink) 34%, transparent), transparent),
+    radial-gradient(ellipse 44px 3px at 57% calc(100% - 8px), color-mix(in srgb, var(--color-paper) 85%, transparent), transparent),
+    /* Shallow wear follows each edge, extending 8px inward. */
+    radial-gradient(ellipse 26px 8px at 11% 0%, color-mix(in srgb, var(--color-vintage-rust) 65%, var(--color-dark-ink)) 0%, color-mix(in srgb, var(--color-vintage-rust) 22%, transparent) 48%, transparent 100%),
+    radial-gradient(ellipse 19px 8px at 43% 0%, color-mix(in srgb, var(--color-vintage-rust) 52%, transparent), transparent),
+    radial-gradient(ellipse 23px 8px at 82% 100%, color-mix(in srgb, var(--color-vintage-rust) 70%, var(--color-dark-ink)) 0%, color-mix(in srgb, var(--color-vintage-rust) 18%, transparent) 35%, transparent 100%),
+    radial-gradient(ellipse 17px 8px at 35% 100%, color-mix(in srgb, var(--color-vintage-rust) 50%, transparent), transparent),
+    radial-gradient(ellipse 8px 24px at 0% 18%, color-mix(in srgb, var(--color-vintage-rust) 70%, var(--color-dark-ink)) 0%, color-mix(in srgb, var(--color-vintage-rust) 20%, transparent) 35%, transparent 100%),
+    radial-gradient(ellipse 8px 18px at 0% 59%, color-mix(in srgb, var(--color-vintage-rust) 55%, transparent), transparent),
+    radial-gradient(ellipse 8px 27px at 100% 44%, color-mix(in srgb, var(--color-vintage-rust) 65%, var(--color-dark-ink)) 0%, color-mix(in srgb, var(--color-vintage-rust) 22%, transparent) 35%, transparent 100%),
+    radial-gradient(ellipse 8px 16px at 100% 86%, color-mix(in srgb, var(--color-vintage-rust) 52%, transparent), transparent),
+    /* Additional separated folds; all remain shallow along the perimeter. */
+    radial-gradient(ellipse 35px 8px at 55% 0%, color-mix(in srgb, var(--color-vintage-rust) 52%, transparent), transparent),
+    radial-gradient(ellipse 30px 3px at 55% 8px, color-mix(in srgb, var(--color-paper) 85%, transparent), transparent),
+    radial-gradient(ellipse 28px 8px at 92% 0%, color-mix(in srgb, var(--color-dark-ink) 32%, transparent), transparent),
+    radial-gradient(ellipse 24px 3px at 92% 8px, color-mix(in srgb, var(--color-paper) 85%, transparent), transparent),
+    radial-gradient(ellipse 8px 32px at 0% 70%, color-mix(in srgb, var(--color-vintage-rust) 52%, transparent), transparent),
+    radial-gradient(ellipse 3px 27px at 8px 70%, color-mix(in srgb, var(--color-paper) 85%, transparent), transparent),
+    radial-gradient(ellipse 8px 36px at 100% 32%, color-mix(in srgb, var(--color-dark-ink) 32%, transparent), transparent),
+    radial-gradient(ellipse 3px 30px at calc(100% - 8px) 32%, color-mix(in srgb, var(--color-paper) 85%, transparent), transparent),
+    radial-gradient(ellipse 38px 8px at 14% 100%, color-mix(in srgb, var(--color-vintage-rust) 52%, transparent), transparent),
+    radial-gradient(ellipse 32px 3px at 14% calc(100% - 8px), color-mix(in srgb, var(--color-paper) 85%, transparent), transparent),
+    /* Small uneven marks along the perimeter suggest worn paper edges. */
+    radial-gradient(ellipse 45px 5px at 14% 0%, color-mix(in srgb, var(--color-vintage-rust) 25%, transparent), transparent),
+    radial-gradient(ellipse 70px 7px at 68% 0%, color-mix(in srgb, var(--color-dark-ink) 18%, transparent), transparent),
+    radial-gradient(ellipse 5px 55px at 0% 32%, color-mix(in srgb, var(--color-vintage-rust) 24%, transparent), transparent),
+    radial-gradient(ellipse 7px 36px at 0% 78%, color-mix(in srgb, var(--color-dark-ink) 17%, transparent), transparent),
+    radial-gradient(ellipse 6px 65px at 100% 20%, color-mix(in srgb, var(--color-vintage-rust) 23%, transparent), transparent),
+    radial-gradient(ellipse 5px 45px at 100% 68%, color-mix(in srgb, var(--color-dark-ink) 18%, transparent), transparent),
+    radial-gradient(ellipse 60px 6px at 28% 100%, color-mix(in srgb, var(--color-vintage-rust) 25%, transparent), transparent),
+    radial-gradient(ellipse 40px 5px at 84% 100%, color-mix(in srgb, var(--color-dark-ink) 18%, transparent), transparent),
+    /* Sparse orange ageing at the corners and darker paper edges. */
+    radial-gradient(ellipse at 2% 8%, color-mix(in srgb, var(--color-vintage-rust) 14%, transparent), transparent 38%),
+    radial-gradient(ellipse at 97% 92%, color-mix(in srgb, var(--color-vintage-rust) 12%, transparent), transparent 35%),
+    radial-gradient(ellipse at 75% 5%, color-mix(in srgb, var(--color-vintage-rust) 4%, transparent), transparent 28%),
+    linear-gradient(90deg, color-mix(in srgb, var(--color-vintage-rust) 14%, transparent), transparent 7% 93%, color-mix(in srgb, var(--color-vintage-rust) 14%, transparent)),
+    linear-gradient(180deg, color-mix(in srgb, var(--color-vintage-rust) 10%, transparent), transparent 8% 92%, color-mix(in srgb, var(--color-vintage-rust) 12%, transparent)),
+    repeating-linear-gradient(16deg, color-mix(in srgb, var(--color-dark-ink) 2%, transparent) 0 1px, transparent 1px 4px),
+    repeating-linear-gradient(102deg, color-mix(in srgb, var(--color-dark-ink) 3%, transparent) 0 1px, transparent 1px 5px),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='.07'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cpath fill='black' filter='url(%23grain)' d='M0 0h180v180H0z'/%3E%3C/svg%3E");
+  /* Fixed-height tiles carry the paper wear down the full scrolling surface. */
+  background-size: 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 100% 100svh, 180px 180px;
+  background-repeat: repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat;
+  box-shadow:
+    inset 0 0 30px color-mix(in srgb, var(--color-dark-ink) 12%, transparent),
+    0 2px 5px color-mix(in srgb, var(--color-dark-ink) 9%, transparent);
+}
+.page-shell::after {
+  content: '✳';
+  position: absolute;
+  color: var(--color-faded-ink);
+  font-size: 1.2rem;
+  line-height: 1;
+  pointer-events: none;
+}
+.page-shell::after { bottom: 0.45rem; right: 0.45rem; }
+.skip-link { position: absolute; top: 0.75rem; left: 1rem; padding: 0.75rem; background: var(--color-paper); z-index: 2; transform: translateY(-200%); }
+.skip-link:focus { transform: translateY(0); }
+.site-header, main, .site-footer { width: 100%; max-width: 1180px; margin-inline: auto; }
+.site-header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.5rem 0 0.75rem; }
+.brand { font-size: 1.8rem; font-weight: 800; letter-spacing: -0.08em; text-decoration: none; color: var(--color-stamp-green); }
+/* Replace this text with the hand-drawn logo when it is ready. */
+.logo-placeholder { display: block; padding: 0.25rem 0.5rem; border: 1px dashed var(--color-faded-ink); font-family: Georgia, serif; font-weight: 400; letter-spacing: -0.03em; }
+.logo-caption { display: block; margin-top: 0.3rem; font-size: 0.6rem; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; }
+.postal-heading { color: var(--color-vintage-rust); font: 400 2.4rem 'Uncial Antiqua', Georgia, serif; letter-spacing: 0.09em; }
+.artwork-slot { min-width: 0; }
+.artwork-slot--stamp { flex: 0 0 96px; }
+.postmark { width: 96px; height: 96px; border: 2px dashed var(--color-postmark-blue); border-radius: 50%; color: var(--color-postmark-blue); display: flex; flex-direction: column; align-items: center; justify-content: center; transform: rotate(9deg); font-size: 0.5rem; letter-spacing: 0.1em; opacity: 0.85; }
+.postmark b { color: var(--color-stamp-green); font-size: 2.25rem; line-height: 1.2; }
+main { flex: 1; display: grid; align-items: center; }
+.hero { display: grid; align-items: center; gap: 2rem; padding: 2rem 0 2.5rem; }
+.handwritten { width: fit-content; color: var(--color-postmark-blue); font: italic 1.25rem 'Segoe Print', 'Bradley Hand', cursive; transform: rotate(-3deg); margin-bottom: 1.5rem; padding-bottom: 0.3rem; border-bottom: 1px solid color-mix(in srgb, var(--color-postmark-blue) 24%, transparent); }
+h1 { font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif; font-size: clamp(2.6rem, 4.8vw, 4.5rem); font-weight: 500; line-height: 1.07; letter-spacing: -0.035em; margin: 0 0 1.25rem; max-width: 19ch; }
+h1 em { color: var(--color-vintage-rust); font-weight: 400; }
+.intro { max-width: 49ch; font-family: Georgia, serif; font-size: 1.1rem; line-height: 1.6; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
+.button { display: flex; justify-content: space-between; align-items: center; gap: 1.25rem; min-height: 48px; padding: 0.85rem 1.1rem; border: 1px solid var(--color-stamp-green); border-radius: 0; font: 400 1.1rem Georgia, serif; text-decoration: none; }
+.button-primary { background: var(--color-stamp-green); color: var(--color-paper); }
+.button-primary:hover { background: var(--color-dark-ink); }
+.button-secondary { color: var(--color-stamp-green); background: transparent; }
+.button-secondary:hover { background: color-mix(in srgb, var(--color-faded-ink) 8%, transparent); }
+.availability { font-size: 0.8rem; margin-top: 1rem; max-width: 46ch; }
+.status { color: var(--color-stamp-green); font-size: 0.8rem; font-weight: 700; margin-bottom: 1rem; }
+.site-footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 1rem; padding: 1.25rem 0; border-top: 1px solid color-mix(in srgb, var(--color-faded-ink) 44%, transparent); font-size: 0.75rem; }
+.placeholder { padding: 3rem 0; max-width: 60ch; }
+.placeholder h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); }
+.placeholder .button { margin-top: 1.5rem; width: fit-content; }
+@media (min-width: 960px) {
+  .hero { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 2.5rem; }
+}
+@media (max-width: 599px) {
+  .postal-heading { font-size: 1.8rem; }
+  .artwork-slot--stamp { display: none; }
+  .hero { padding-block: 1.5rem 2rem; }
+  .hero-actions { flex-direction: column; }
+  .handwritten { font-size: 1rem; }
+}
+
+/* Contrasting dictionary panel, with discovery content beside it on desktop. */
+.dictionary-entry { width: 100%; max-width: 30rem; border: 8px double var(--color-paper); outline: 1px solid var(--color-faded-ink); box-shadow: 3px 5px 0 color-mix(in srgb, var(--color-dark-ink) 15%, transparent); padding: clamp(1rem, 3vw, 1.5rem); margin-bottom: 1.5rem; }
+.dictionary-entry h1 { font-size: clamp(2.25rem, 4vw, 3.5rem); margin-bottom: 0.5rem; }
+.dictionary-meta { display: flex; flex-wrap: wrap; gap: 0.35rem; color: var(--color-postmark-blue); font-size: 0.85rem; }
+.dictionary-meta > span:first-child { font-style: italic; }
+.dictionary-meaning { margin-top: 0.85rem; font-family: Georgia, serif; font-size: clamp(1.2rem, 2.2vw, 1.5rem); }
+.dictionary-meaning > span { color: var(--color-vintage-rust); margin-inline: 0.2rem; }
+.dictionary-explanation { max-width: 48ch; margin-top: 0.5rem; font-size: 0.9rem; }
+
+.dictionary-entry { background: var(--color-stamp-green); color: var(--color-paper); }
+.dictionary-entry h1, .dictionary-entry .dictionary-meta, .dictionary-meaning > span { color: var(--color-paper); }
+.dictionary-entry :focus-visible { outline-color: var(--color-paper); }
+@media (min-width: 960px) {
+  .hero { grid-template-columns: minmax(0, 1fr); }
+  .hero-copy { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.5rem 3rem; align-items: center; }
+  .hero-copy > .handwritten { grid-column: 1 / -1; margin-bottom: 0; }
+  .dictionary-entry { max-width: none; margin-bottom: 0; }
+}
+
+/* Restrained letterpress impression with sharp ink edges and a soft shadow.
+   Opt in only on decorative titles; keep body copy and controls unaffected. */
+.vintage-title {
+  --title-ink: color-mix(in srgb, var(--color-vintage-rust) 94%, var(--color-dark-ink));
+  color: var(--title-ink);
+  -webkit-text-stroke: 1.3px color-mix(in srgb, var(--color-paper) 90%, var(--color-vintage-rust));
+  paint-order: stroke fill;
+  text-shadow:
+    0 -0.35px 0 color-mix(in srgb, var(--color-dark-ink) 24%, transparent),
+    0.25px 0 0 color-mix(in srgb, currentColor 30%, transparent),
+    -0.2px 0.15px 0 color-mix(in srgb, var(--color-paper) 35%, transparent),
+    0 0.6px 0 color-mix(in srgb, var(--color-paper) 75%, transparent),
+    0.5px 1px 1.5px color-mix(in srgb, var(--color-dark-ink) 16%, transparent);
+}
+@media (forced-colors: active) {
+  .vintage-title { text-shadow: none; -webkit-text-stroke: 0; }
+}
+
+/* Sparse worn-ink spots clipped to the letters, matching the outline tint. */
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  .vintage-title {
+    --print-wear: color-mix(in srgb, var(--color-paper) 90%, var(--color-vintage-rust));
+    background-image:
+      radial-gradient(circle 0.8px at 12% 42%, var(--print-wear) 70%, transparent),
+      radial-gradient(circle 1px at 28% 65%, var(--print-wear) 65%, transparent),
+      radial-gradient(circle 0.7px at 45% 38%, var(--print-wear) 65%, transparent),
+      radial-gradient(ellipse 2px 1px at 59% 57%, var(--print-wear) 50%, transparent),
+      radial-gradient(circle 0.9px at 75% 40%, var(--print-wear) 65%, transparent),
+      radial-gradient(ellipse 1.7px 1px at 88% 68%, var(--print-wear) 45%, transparent),
+      linear-gradient(var(--title-ink), var(--title-ink));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+@media (forced-colors: active) {
+  .vintage-title { background-image: none; -webkit-text-fill-color: currentColor; }
+}
+
+/* A small press response without changing the button's layout or hit area. */
+.button { transition: transform 120ms ease-out; }
+.button:active { transform: scale(0.97); }
+@media (prefers-reduced-motion: reduce) {
+  .button { transition: none; }
+  .button:active { transform: none; }
+}
+
+/* Replace this decorative stamp with original artwork when available.
+   Its reserved space prevents the label moving as it fades in. */
+.button-stamp {
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 1.4rem;
+  width: 1.4rem;
+  height: 1.65rem;
+  border: 1px dashed currentColor;
+  font: 1rem/1 Georgia, serif;
+  opacity: 0;
+  transition: opacity 160ms ease-out;
+}
+@media (hover: hover) {
+  .button:hover .button-stamp { opacity: 1; }
+}
+.button:focus-visible .button-stamp { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .button-stamp { transition: none; }
+}
+
+/* Equal 1.1rem edge spacing once the label slides toward the stamp. */
+.button { position: relative; justify-content: center; padding-inline: 3rem; text-align: center; }
+.button-stamp { position: absolute; right: 1.1rem; }
+.button-label { display: block; transition: transform 180ms ease-out; }
+@media (hover: hover) {
+  .button:hover .button-label { transform: translateX(-1.9rem); }
+}
+.button:focus-visible .button-label { transform: translateX(-1.9rem); }
+@media (prefers-reduced-motion: reduce) {
+  .button-label { transition: none; }
+}
+
+/* A playful nudge for the dictionary panel, without changing document flow. */
+.dictionary-entry { transition: transform 200ms ease-out; }
+@media (hover: hover) {
+  .dictionary-entry:hover { transform: rotate(-1.5deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dictionary-entry { transition: none; }
+  .dictionary-entry:hover { transform: none; }
+}
+
+/* Fill the desktop hero's left column while retaining space inside the frame. */
+@media (min-width: 960px) {
+  .hero-copy { align-items: stretch; }
+  .dictionary-entry {
+    align-self: stretch;
+    min-height: clamp(20rem, 45svh, 32rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(1.5rem, 3.5vw, 3rem);
+  }
+  .hero-discovery { align-self: center; }
+}
+
+/* Both hero actions share the same dimensions, including wrapped labels. */
+.hero-actions { display: grid; grid-template-columns: minmax(0, 1fr); grid-auto-rows: 1fr; }
+.hero-actions .button { width: 100%; min-height: 3.5rem; }
+@media (min-width: 600px) and (max-width: 959px), (min-width: 1200px) {
+  .hero-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 599px) {
+  .vintage-title { -webkit-text-stroke-width: 0.8px; }
+}
+@media (forced-colors: active) {
+  .vintage-title { -webkit-text-stroke-width: 0; }
+}
+
+/* Route headings receive focus for announcements, not as interactive controls. */
+h1[tabindex="-1"]:focus { outline: none; }
+
+/* Let the paper reach the screen edges on phones. */
+@media (max-width: 599px) {
+  body { background: var(--color-paper); }
+  .page-shell { border: 0; }
+}
+
+/* Keep overscroll behind the textured sheet paper-coloured on every screen. */
+body { background-color: var(--color-paper); }
+
+/* Plain paper on phones: no decorative background seams while scrolling. */
+@media (max-width: 599px) {
+  .page-shell {
+    border: 0;
+    background: var(--color-paper);
+    box-shadow: none;
+  }
+  .page-shell::after { content: none; }
+}
+
+/* Mobile title reference: warm taupe ink with a fine paper-toned outline. */
+@media (max-width: 599px) {
+  .vintage-title {
+    --title-ink: #B59A82;
+    -webkit-text-stroke-width: 0.2px;
+  }
+}
+@media (forced-colors: active) {
+  .vintage-title { -webkit-text-stroke-width: 0; }
+}
