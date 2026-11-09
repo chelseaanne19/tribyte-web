@@ -52,7 +52,7 @@ If you already ran the Vite command and have a `tribyte-web` folder, keep it. Fo
 
 ## Working principles
 
-- **Real students, real content:** example copy and mock map pins must never be presented as genuine recommendations.
+- **Real students, real content:** publish only real, reviewed, permissioned recommendations. Keep the guide empty until approved advice is available.
 - **One complete useful slice at a time:** first let students *find* useful tips; then add a map; then build the postcard maker.
 - **Practicality before polish:** functionality and feedback matter more than decorative animations.
 - **Portable, private postcards:** image files stay in the browser for the postcard creator; users download them and share on their preferred platforms.

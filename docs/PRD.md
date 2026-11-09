@@ -82,13 +82,13 @@ For the cold start, aim for **12–18 genuinely collected, consented, reviewed t
 | G-02 | Public mobile browsing | Visitors can read every published tip without login on small screens and keyboard. |
 | G-03 | Balanced category navigation | Six categories (3 essentials, 3 discovery); select/reset filters and see matching counts or empty state. |
 | G-04 | Useful tip card/detail | Show title, recommendation, category, appropriate location (if any), date/last-reviewed information and practical context. |
-| G-05 | Curated local data | Starter data is genuinely sourced with consent, or explicitly labelled demo; no invented endorsements. |
+| G-05 | Curated local data | Data is genuinely sourced, reviewed and permissioned; keep the dataset empty until approved advice is supplied. |
 | G-06 | General advice | Transport and budgeting tips work *without* forced map markers. |
 | G-07 | Basic content safeguards | No public personal addresses, private student photos, precise private location or unreviewed public posts. |
 | G-08 | Accessible states | Clear navigation, semantic controls, loading/empty/error states as applicable, adequate contrast. |
 | G-09 | QA | Production build and lint pass; manually test phone and desktop flows. |
 
-**Allowed R1 shortcut:** Use clearly labelled example content during UI development and replace it before any real-user usefulness test. Do not pretend example pins are genuine student posts.
+**While collecting content:** Keep the dataset empty and show honest empty states until real, reviewed, permissioned advice is supplied.
 
 ### R2 / P1 — Interactive map of place recommendations
 

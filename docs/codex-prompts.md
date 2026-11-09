@@ -35,7 +35,7 @@ Read AGENTS.md and docs/PRD.md. Implement M1 only:
   is okay before those experiences are implemented).
 - Use simple accessible components and CSS; include visual focus states.
 
-Do not add a map, mock student reviews presented as real, a database,
+Do not add a map, student reviews without approval, a database,
 accounts, photos, analytics, or an editor. Before editing, give a
 small file plan. After edits, run the available build/lint checks,
 explain how I can test desktop/mobile, list changed files, and
@@ -53,9 +53,8 @@ Implement the M2 guide only:
   affordable food, study spots, things to do).
 - A typed local data model (place or general tip), category filters,
   helpful empty state, clear details, and last-reviewed dates.
-- Use ONLY supplied real approved data. If none exists, create
-  clearly labelled fictional UI demo fixtures in a separate file
-  that cannot be confused with verified student advice.
+- Use ONLY supplied real, reviewed, permissioned data. If none
+  exists, keep the dataset empty and show a helpful empty state.
 - Make the layout mobile-first, accessible and readable.
 
 No map, geocoding, network submissions, admin UI, authentication,

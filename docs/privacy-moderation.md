@@ -42,7 +42,7 @@ This needs a separate technical/privacy review and an owner willing to moderate.
 
 ## Before public launch checklist
 
-- [ ] Every visible community recommendation is genuine, approved or **clearly flagged fictional demo**.
+- [ ] Every visible community recommendation is genuine, reviewed and approved for publication.
 - [ ] No private contributor details or consent documents in the repository.
 - [ ] All pins have real verified public locations.
 - [ ] Time-sensitive claims are dated or linked to current official sources.

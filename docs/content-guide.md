@@ -64,7 +64,7 @@ type Tip = {
 - A `general` tip must have **no pin**; a `place` tip must have **verified public coordinates** to display on the map.
 - Never make up a rating, price, student quote, or review count.
 - Initial data is a *read-only, reviewed* local TypeScript/JSON module. Keep private permission evidence **out of the public repo**.
-- If UI needs filler examples, isolate them in `demoTips` and mark them **fictional demonstration content**. Never mix with the published approved dataset.
+- Keep the dataset empty until real, reviewed, permissioned advice is supplied. Use honest empty states.
 - A submitted, unreviewed post should never reach the public build.
 
 ## Initial content workflow (no backend)

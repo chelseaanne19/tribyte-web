@@ -7,7 +7,7 @@
 |---|---|---|---|
 | **M0 — Local foundation** | Clone existing repo; scaffold React + TypeScript + Vite + ESLint; add docs | `npm run dev`, `npm run build`, `npm run lint` work | `chore: scaffold app and document product scope` |
 | **M1 — Branded front door** | Responsive homepage, Guide and Postcard CTAs; guide placeholder | Phone + desktop; links work; no invented functionality | `feat: add TriByte landing page` |
-| **M2 — Useful guide list** | Six categories; curated typed local dataset; filtering; tip details; useful general tips | Genuine or *labelled demo* content; filter + reset work; keyboard accessible | `feat: add curated student tips guide` |
+| **M2 — Useful guide list** | Six categories; curated typed local dataset; filtering; tip details; useful general tips | Real, reviewed, permissioned content only; honest empty states until supplied; filter + reset work; keyboard accessible | `feat: add curated student tips guide` |
 | **M2b — Test with students** | Five newcomer tasks on list experience; collect observations | Test log and one prioritised change | `docs: record guide usability findings` |
 | **M3 — Map** | Interactive map for verified public place coordinates; list alternative; pin-detail links | Pins correct; filter sync; attribution visible; no false markers | `feat: add location-based tips map` |
 | **M4 — Postcard vertical slice** | 3:2 template; one photo; caption; preview; PNG download | Photo never uploaded; export visually matches preview; browser tested | `feat: create landscape postcard generator` |

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import './App.css'
+import { Guide } from './features/guide/Guide'
 
 // Replace the contents of these decorative slots with original artwork when ready.
 function HandwrittenNote() {
@@ -47,15 +48,13 @@ function App() {
         </header>
 
         <main id="main" tabIndex={-1}>
-          {isPlaceholder ? (
+          {isGuide ? <Guide headingRef={headingRef} /> : isPlaceholder ? (
             <section className="placeholder" aria-labelledby="destination-title">
               <p className="status">Coming soon</p>
               <h1 id="destination-title" ref={headingRef} tabIndex={-1}>
-                {isGuide ? 'Your student guide' : 'Make a postcard'}
+                Make a postcard
               </h1>
-              <p>{isGuide
-                ? 'Practical UCD and Dublin tips will appear here once they’ve been collected, reviewed and approved for sharing. No recommendations are published yet.'
-                : 'A guided photo postcard creator is planned for a later release. The editor and downloads aren’t available yet.'}</p>
+              <p>A guided photo postcard creator is planned for a later release. The editor and downloads aren’t available yet.</p>
               <a className="button button-secondary" href="#top"><span className="button-label">Back to home</span> <span className="button-stamp" aria-hidden="true">✳</span></a>
             </section>
           ) : (
@@ -74,7 +73,7 @@ function App() {
                 <a className="button button-primary" href="#explore"><span className="button-label">Explore student tips</span> <span className="button-stamp" aria-hidden="true">✳</span></a>
                 <a className="button button-secondary" href="#create"><span className="button-label">Make a postcard</span> <span className="button-stamp" aria-hidden="true">✳</span></a>
               </div>
-              <p className="availability">In the making: the guide and postcard creator are coming soon.</p>
+              <p className="availability">Student advice is being collected for the guide. Postcard creator coming soon.</p>
               </div>
             </div>
           </section>

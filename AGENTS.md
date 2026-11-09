@@ -9,7 +9,7 @@ Read **README.md**, **docs/PRD.md**, **docs/decisions.md**, **docs/build-plan.md
 - Audience: UCD Erasmus, exchange and international students; initial geography is UCD and Dublin, not all of Ireland.
 - Main utility: **practical student recommendations**. Balance 3 settling-in categories (transport, groceries, budgeting) and 3 discovery categories (food, study spots, things to do).
 - A *place* recommendation may have a geographic marker. *General advice* must remain accessible without a fake marker.
-- **Student posts must come from real, consented contributions or clearly marked demo fixtures. Never invent published testimonials, local recommendations, statistics or user identities.**
+- **Student posts must come from real, consented contributions. Never invent published testimonials, local recommendations, statistics or user identities.**
 - Digital companion: public QR-linked branded landing page; guide as primary action, guided postcard creator as secondary. No paywall.
 - Visual style: retro Irish × modern travel journal; playful, warm, not overly sentimental.
 
