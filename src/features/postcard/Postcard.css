@@ -1,0 +1,51 @@
+.postcard { padding-block: 1rem 2rem; min-width: 0; }
+.postcard > h1 { font-size: clamp(2rem, 4vw, 3rem); margin-block: 0.75rem 0.4rem; }
+.postcard-privacy { max-width: 75ch; font-size: 0.85rem; margin-block: 0.5rem 1.25rem; }
+.postcard-layout { display: grid; gap: 1.25rem; align-items: start; }
+.postcard-controls { min-width: 0; }
+.postcard-controls h2 { font-size: 1.3rem; margin-bottom: 0.65rem; }
+.postcard-controls h2:not(:first-child) { margin-top: 1.5rem; }
+.postcard-controls label { display: block; font-weight: 600; margin-bottom: 0.5rem; }
+.postcard-controls input, .postcard-controls textarea { width: 100%; min-height: 48px; padding: 0.75rem; border: 1px solid var(--color-stamp-green); border-radius: 0; font: inherit; color: var(--color-dark-ink); background: var(--color-paper); }
+.postcard-controls input::file-selector-button { min-height: 44px; margin-right: 0.5rem; padding: 0.5rem; border: 1px solid var(--color-stamp-green); background: var(--color-stamp-green); color: var(--color-paper); cursor: pointer; }
+.postcard-controls textarea { resize: vertical; }
+.postcard-controls p { margin-block: 0.5rem; }
+.postcard-controls .button { margin-block: 1rem; cursor: pointer; }
+.postcard-controls .button:disabled { opacity: 0.65; cursor: not-allowed; transform: none; }
+.postcard-filename, .postcard-error { overflow-wrap: anywhere; }
+.postcard-error { border-left: 3px solid var(--color-stamp-green); padding-left: 0.75rem; font-weight: 600; }
+.postcard-preview { min-width: 0; margin: 0; }
+.postcard-preview canvas { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; }
+@media (min-width: 960px) {
+  .postcard-layout { grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); }
+}
+
+.postcard-controls #photo-help, .postcard-controls #caption-help { font-size: 0.8rem; line-height: 1.5; }
+.postcard-controls .postcard-filename { font-size: 0.85rem; }
+.postcard-preview { padding: 0.5rem; border: 1px solid color-mix(in srgb, var(--color-stamp-green) 25%, transparent); }
+.postcard-download { padding-top: 1rem; margin-top: 1rem; border-top: 1px solid color-mix(in srgb, var(--color-stamp-green) 30%, transparent); }
+.postcard-download h2 { font-size: 1.3rem; margin-bottom: 0.4rem; }
+.postcard-download .button { margin-block: 0.75rem; padding-inline: 1.5rem; cursor: pointer; width: fit-content; max-width: 100%; }
+.postcard-download .button:disabled { opacity: 0.65; cursor: not-allowed; transform: none; }
+.postcard-help { font-size: 0.85rem; }
+.postcard-error { margin-top: 0.75rem; }
+
+/* Match the homepage and guide cards without altering exported artwork. */
+.postcard-preview {
+  background: var(--color-paper);
+  box-shadow:
+    2px 3px 2px color-mix(in srgb, var(--color-dark-ink) 18%, transparent),
+    5px 8px 13px color-mix(in srgb, var(--color-dark-ink) 25%, transparent);
+  transition: transform 200ms ease-out;
+}
+@media (hover: hover) {
+  .postcard-preview:hover { transform: rotate(-1.5deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .postcard-preview { transition: none; }
+  .postcard-preview:hover { transform: none; }
+}
+
+.postcard > .postcard-privacy { margin-block: 1.5rem 0; }
+
+.postcard > .postcard-layout { margin-top: 1.75rem; }

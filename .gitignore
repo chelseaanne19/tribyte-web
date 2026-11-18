@@ -25,3 +25,13 @@ dist-ssr
 
 # Local design references
 /inspo/
+
+# Private research imports: never publish raw survey exports or consent records.
+/private-research/
+*.csv
+*.xlsx
+*.xls
+/untitled folder/
+
+# Local Vercel project metadata
+.vercel/

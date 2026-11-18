@@ -43,12 +43,16 @@ type Tip = {
   body: string;
   category: TipCategory;
   kind: 'place' | 'general';
-  // Required only when kind is 'place'; coordinates must be verified.
+  // A public place can appear in the list without map coordinates.
   place?: {
     name: string;
-    latitude: number;
-    longitude: number;
     address?: string; // public business/institution address only
+    coordinates?: { // include only after verifying an exact public location
+      latitude: number;
+      longitude: number;
+      verificationSourceUrl: string;
+      verifiedAt: string;
+    };
   };
   publicAttribution?: string; // e.g. "Exchange student" or approved alias
   submittedAt: string; // ISO YYYY-MM-DD
@@ -89,3 +93,11 @@ type Tip = {
 **Bridge prompt:** 'What's one thing a new student could learn from this experience?'
 
 Storytelling is the *style*. Practicality is the *purpose*.
+
+## Tonight's handoff: publication boundary
+
+`src/data/tips.ts` contains only approved public wording. It now contains 11 owner-approved tips from two consented survey responses (approved 17 November 2026). Raw survey exports belong outside the repository or in the ignored `private-research/` directory; `.csv`, `.xlsx` and `.xls` files are ignored as an additional safeguard. Never import private material into `src/` or `public/`, even if its file extension is ignored: bundlers can still publish imported content.
+
+One survey response is one contributor. Assign a stable anonymous `contributorId` and reuse it for every tip extracted from that response. Tip counts are not contributor counts. Do not infer consent from submission alone. Review exact public wording and submission/review dates before adding it to `approvedTips`; private consent evidence must remain private. `sourceRecord` must be safe for public display.
+
+A place recommendation can appear in the list with its approved public name/address and no coordinates. Only an optional `place.coordinates` bundle with an exact verified location, verification source and review date is eligible for a future map. General advice has no place or coordinates. The interactive map is not implemented.

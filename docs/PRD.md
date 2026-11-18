@@ -4,7 +4,7 @@
 **Last updated:** 2026-11-08  
 **Status:** Product direction agreed; demand, final design and feature priority must be validated  
 **Company:** TriByte  
-**Working name:** Pocket Post (**not final / not name-cleared**)  
+**Working name:** Aon Scéal  
 **Module context:** UCD Innovation Academy IA20130
 
 ## 1. Problem and opportunity
@@ -29,13 +29,12 @@ TriByte is also building Irish-themed physical keychains/souvenirs. Packaging ma
 
 ## 3. Product principles
 
-1. Utility before novelty: a recommendation must help with a decision, not merely add a pin.
-2. Student-specific context: why is this useful, what is the approximate cost/effort, and how can a newcomer get there?
-3. Mix **settling in** and **discovering Dublin**; do not bias everything toward tourism.
-4. Fun, lightly nostalgic visual identity. No forced serious farewell framing.
-5. Public browsing, no account, mobile first, optional postcard creation.
-6. Submissions are **reviewed before publication**. Private photos are private by default.
-7. Measure observed behaviour, not compliments or speculative growth.
+1. Student-specific context: why is this useful, what is the approximate cost/effort, and how can a newcomer get there?
+2. Mix **settling in** and **discovering Dublin**; do not bias everything toward tourism.
+3. Fun, lightly nostalgic visual identity. No forced serious farewell framing.
+4. Public browsing, no account, mobile first, optional postcard creation.
+5. Submissions are **reviewed before publication**. Private photos are private by default.
+
 
 ## 4. Initial categories (balanced C)
 
@@ -46,7 +45,7 @@ A recommendation has a `type`:
 - **Place:** tied to a verified public location and eligible for a map pin.
 - **General tip:** not tied to one location; appears in the topic/list guide, **not** as a fabricated map pin.
 
-For the cold start, aim for **12–18 genuinely collected, consented, reviewed tips**, roughly balanced across six categories (e.g. two or three per category). This is a collection target, not already-existing content.
+Aiming for **12–18 genuinely collected, consented, reviewed tips**, roughly balanced across six categories (e.g. two or three per category).
 
 ## 5. Public user journeys
 
@@ -60,10 +59,10 @@ For the cold start, aim for **12–18 genuinely collected, consented, reviewed t
 
 ### B. Make a postcard (secondary)
 
-1. Choose *Greetings from Ireland* (landscape 3:2, one photo) or later *My Irish Days* (portrait 4:5, three photos).
+1. Choose from templates.
 2. Upload local photo(s), choose from optional playful prompts, add a short caption.
 3. Preview and download a PNG; no account, public upload or automatic posting.
-4. Optionally receive a **non-blocking** invitation to contribute a student tip once a safe submission workflow exists.
+
 
 ### C. Contribute a tip (research first, live publishing later)
 
@@ -159,14 +158,3 @@ No login, student social profiles, follows, likes, ratings, public photo feed, u
 **R3 postcard pilot:** Check independent completion and valid PNG download; ask what they would naturally do with the file. Do not treat 'cute!' as proof of recurring demand.
 
 **For the pitch/CV:** Use only true metrics with dates, participant counts and methods; distinguish qualitative feedback from measured adoption.
-
-## 11. Open questions
-
-- Do new students trust recommendations from other students? What makes one credible?
-- Which three categories are used most often when users have a concrete task?
-- Are posts too shallow to be useful? What minimum detail do readers expect?
-- Does the map improve wayfinding or merely add novelty and complexity?
-- Would students actually contribute if no public profile/reward exists?
-- Does postcard creation reinforce the guide, or do users see them as separate products?
-- Does the physical keychain's QR experience improve appeal or only serve as distribution?
-- What is the final brand/product name? (Pocket Post is temporary.)

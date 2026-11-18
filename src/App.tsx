@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import './App.css'
 import { Guide } from './features/guide/Guide'
+import { Postcard } from './features/postcard/Postcard'
 
 // Replace the contents of these decorative slots with original artwork when ready.
 function HandwrittenNote() {
@@ -20,7 +21,7 @@ function App() {
   const headingRef = useRef<HTMLHeadingElement>(null)
   const hasMounted = useRef(false)
   const isGuide = hash === '#explore'
-  const isPlaceholder = isGuide || hash === '#create'
+  const isCreate = hash === '#create'
 
   useEffect(() => {
     const onHashChange = () => setHash(window.location.hash)
@@ -35,7 +36,7 @@ function App() {
       window.scrollTo(0, 0)
     }
     hasMounted.current = true
-  }, [isPlaceholder, isGuide])
+  }, [isCreate, isGuide])
 
   return (
     <>
@@ -48,16 +49,8 @@ function App() {
         </header>
 
         <main id="main" tabIndex={-1}>
-          {isGuide ? <Guide headingRef={headingRef} /> : isPlaceholder ? (
-            <section className="placeholder" aria-labelledby="destination-title">
-              <p className="status">Coming soon</p>
-              <h1 id="destination-title" ref={headingRef} tabIndex={-1}>
-                Make a postcard
-              </h1>
-              <p>A guided photo postcard creator is planned for a later release. The editor and downloads aren’t available yet.</p>
-              <a className="button button-secondary" href="#top"><span className="button-label">Back to home</span> <span className="button-stamp" aria-hidden="true">✳</span></a>
-            </section>
-          ) : (
+          <Postcard active={isCreate} headingRef={isCreate ? headingRef : undefined} />
+          {isGuide ? <Guide headingRef={headingRef} /> : isCreate ? null : (
           <section className="hero" aria-labelledby="welcome-title">
             <div className="hero-copy">
               <HandwrittenNote />
@@ -73,7 +66,7 @@ function App() {
                 <a className="button button-primary" href="#explore"><span className="button-label">Explore student tips</span> <span className="button-stamp" aria-hidden="true">✳</span></a>
                 <a className="button button-secondary" href="#create"><span className="button-label">Make a postcard</span> <span className="button-stamp" aria-hidden="true">✳</span></a>
               </div>
-              <p className="availability">Student advice is being collected for the guide. Postcard creator coming soon.</p>
+              <p className="availability">Browse reviewed student advice or make a postcard with your own photo.</p>
               </div>
             </div>
           </section>

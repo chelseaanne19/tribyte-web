@@ -1,8 +1,8 @@
-# TriByte — student guide + Pocket Post
+# TriByte — student guide + Aon Scéal
 
-> **Status:** Pre-build / research-backed specification, not yet a working application.  
+> **Status:** Landing page, guide UI and browser-local postcard creator implemented; 11 approved guide tips from two contributors; real-device QA pending.  
 > **Company:** TriByte  
-> **Working product name:** Pocket Post (**placeholder only; not trademark-checked**)  
+> **Product / collection name:** Aon Scéal  
 > **Context:** UCD Innovation Academy, IA20130  
 > **Audience:** UCD Erasmus, exchange and international students, including full-degree students.
 
@@ -28,6 +28,10 @@ This is **not** a social network or a replacement for Google Maps. Its hypothesi
 | **R4 — Polish** | Second 4:5 template; improvements supported by user tests | Add depth after core flows work |
 
 **Do not build** accounts, public self-service posting, automatic publication, comments, likes, ratings, cloud photo albums, payments or customer-only unlocking yet. A contribution workflow is a *future experiment*, with human review required before anything is public.
+
+## Demo handoff
+
+See [demo handoff](docs/demo-handoff.md) for current limitations, desktop/phone checks and manual deployment steps.
 
 ## Repo status: start here
 

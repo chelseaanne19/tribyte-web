@@ -6,7 +6,6 @@
 
 ## Creative direction
 
-**Blend A + D:**
 
 - **Retro Irish:** bold tourism-poster typography, shamrock/clover-inspired graphic accents, nostalgic green-and-cream palette.
 - **Travel journal:** photo frames, collage spacing, paper textures, casual captions, friendly modern UX.

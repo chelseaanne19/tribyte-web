@@ -1,0 +1,22 @@
+{
+  "redirects": [
+    {
+      "source": "/scan",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/explore",
+      "destination": "/#explore",
+      "permanent": false
+    },
+    {
+      "source": "/create",
+      "destination": "/#create",
+      "permanent": false
+    }
+  ],
+  "framework": "vite",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist"
+}
